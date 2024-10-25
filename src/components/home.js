@@ -3,7 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faTabletAlt, faMobileAlt, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import styled from "styled-components";
 import { icon } from '@fortawesome/fontawesome-svg-core';
-
+import Testimonals from './testimonals';
+import Team from './team.js'
+import Footer from './footer.js';
+import Choose from './choose.js';
+import LatestNews from './latestNews.js';
 
 const StyledButton = styled.div`
   width: 150px;
@@ -104,11 +108,7 @@ export default function Home() {
         }
     ]
 
-    const testimonals =[ 
-        {
-            text:""
-        }
-    ]
+   
     return (
 
         <>
@@ -294,9 +294,9 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
                         {stats.map((stat, index) => (
                             <div key={index} className="flex flex-col items-center">
-                                <div className="flex items-center justify-center space-x-2 "> 
+                                <div className="flex items-center justify-center space-x-2 ">
                                     <div className="text-7xl font-bold text-[#dfa667] mt-20">{stat.number}</div>
-                                    <div className="text-gray-700 font-semibold text-left !mr-28 mt-24" style={{fontFamily:"Aldrich, sans-serif", fontSize:"1.5rem"}}>{stat.label}</div>
+                                    <div className="text-gray-700 font-semibold text-left !mr-28 mt-24" style={{ fontFamily: "Aldrich, sans-serif", fontSize: "1.5rem" }}>{stat.label}</div>
                                 </div>
                             </div>
                         ))}
@@ -306,63 +306,26 @@ export default function Home() {
 
             </section>
 
-            <section className='testimonals'>
-
-            <div className="bg-gray-100 py-16">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold uppercase">What your clients say</h2>
-      </div>
-
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <p className="text-lg italic text-gray-600">
-          "Fast and accurate at solving mental math problems involving addition,
-          subtraction, multiplication, division and percentages but without
-          high-level skills that might be required in jobs requiring complex
-          calculation and analysis."
-        </p>
-      </div>
-
-      <div className="flex justify-center items-center mt-8">
-        <div className="flex space-x-4">
-          {/* You can map over user testimonials here */}
-          <img
-            src="https://randomuser.me/api/portraits/women/44.jpg"
-            alt="User avatar"
-            className="w-12 h-12 rounded-full border-2 border-gray-200"
-          />
-          <img
-            src="https://randomuser.me/api/portraits/men/32.jpg"
-            alt="User avatar"
-            className="w-12 h-12 rounded-full border-2 border-gray-200"
-          />
-          <img
-            src="https://randomuser.me/api/portraits/men/43.jpg"
-            alt="User avatar"
-            className="w-12 h-12 rounded-full border-2 border-gray-200"
-          />
-          <img
-            src="https://randomuser.me/api/portraits/women/62.jpg"
-            alt="User avatar"
-            className="w-12 h-12 rounded-full border-2 border-gray-200"
-          />
-        </div>
-      </div>
-
-      <div className="text-center mt-4">
-        <div className="flex items-center justify-center">
-          <img
-            src="https://randomuser.me/api/portraits/women/44.jpg"
-            alt="Renee Calhoun"
-            className="w-16 h-16 rounded-full border-2 border-gray-200"
-          />
-        </div>
-        <p className="mt-2 text-lg font-semibold">Renee Calhoun</p>
-        <p className="text-sm text-gray-500">CEO Woolley</p>
-      </div>
-    </div>
-
-
+            <section>
+                <Testimonals/>
             </section>
+
+            <section>
+                <Team />
+            </section>
+
+            <section>
+                <Choose />
+            </section>
+
+            <section>
+                <LatestNews />
+            </section>
+
+            <section>
+                 <Footer/>
+            </section>
+
             
 
         </>
