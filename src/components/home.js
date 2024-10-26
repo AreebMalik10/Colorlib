@@ -1,72 +1,16 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDesktop, faTabletAlt, faMobileAlt, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
-import styled from "styled-components";
-import { icon } from '@fortawesome/fontawesome-svg-core';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Navbar from './navbar.js';
+import Work from './work.js';
 import Testimonals from './testimonals';
 import Team from './team.js'
 import Footer from './footer.js';
 import Choose from './choose.js';
 import LatestNews from './latestNews.js';
 
-const StyledButton = styled.div`
-  width: 150px;
-  height: 50px;
-  border: 1px solid #333;
-  font-size: 20px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 0;
-  transition: 1s;
-  color: #000;
-  font-family: sans-serif;
 
-  &::before,
-  &::after {
-    position: absolute;
-    background: #e8e8e8;
-    z-index: -1;
-    transition: 1s;
-    content: "";
-  }
-
-  &::before {
-    height: 50px;
-    width: 130px;
-  }
-
-  &::after {
-    width: 150px;
-    height: 30px;
-  }
-
-  &:hover::before {
-    width: 0px;
-    background: #e8e8e8;
-  }
-
-  &:hover::after {
-    height: 0px;
-    background: #fff;
-  }
-
-  &:hover {
-    background: #fff;
-  }
-
-  .noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-`;
 
 export default function Home() {
 
@@ -108,88 +52,121 @@ export default function Home() {
         }
     ]
 
-   
+
     return (
 
         <>
 
-            <section className='navbar'>
-                <div className="bg-[#333] flex items-center justify-between px-6 py-4">
-                    {/* Left Side - Logo */}
-                    <div className="flex items-center space-x-4">
-                        <div className="text-white text-4xl font-bold">colorlib<span className='text-green-500'>.</span></div>
-                        <div className="text-gray-400 text-2xl">+ STAGING</div>
-                    </div>
-
-                    {/* Right Side - Icons */}
-                    <div className="flex items-center space-x-4">
-                        {/* Device Icons */}
-                        <div className="p-4  bg-gray-800 rounded-lg">
-                            <FontAwesomeIcon icon={faDesktop} className="text-white text-2xl cursor-pointer" />
-                        </div>
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <FontAwesomeIcon icon={faTabletAlt} className="text-white text-2xl cursor-pointer" />
-                        </div>
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <FontAwesomeIcon icon={faMobileAlt} className="text-white text-2xl cursor-pointer" />
-                        </div>
-
-                        {/* Cart Icon */}
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <FontAwesomeIcon icon={faShoppingCart} className="text-green-500 text-2xl cursor-pointer" />
-                        </div>
-
-                        {/* Close Icon */}
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <FontAwesomeIcon icon={faTimes} className="text-white text-2xl cursor-pointer" />
-                        </div>
-                    </div>
-
-
-                </div>
+            <section className='nav-bar'>
+                <Navbar />
             </section>
 
 
             <section className='home'>
-                <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url(https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg)" }}>
+                <div className="relative w-full h-[150vh]">
+                    {/* Background Image */}
+                    <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg)' }}></div>
+
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-black opacity-60"></div>
+                    <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
                     {/* Navbar */}
-                    <nav className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between p-6">
-                        <div className="text-white text-5xl font-semibold ml-32">Staging<span className="text-yellow-400">.</span></div>
-                        <div className="flex space-x-12 text-white">
-                            <button className="text-xl font-bold underline decoration-yellow-400 !cursor-pointer hover:text-yellow-400">Home</button>
-                            <button className="text-xl font-bold hover:underline decoration-yellow-400">Projects</button>
-                            <button className="text-xl font-bold hover:text-yellow-400">About</button>
-                            <button className="text-xl font-bold hover:text-yellow-400">Pages</button>
-                            <button className="text-xl font-bold hover:text-yellow-400">Blog</button>
-                            <button className="text-xl font-bold hover:text-yellow-400">Contact</button>
-                        </div>
-                        <div className="text-[#fff] text-md mr-20">
-                            <p>Call us for any questions</p>
-                            <a href="tel:+01123456789" className="text-lg text-yellow-400">+01 123 456 789</a>
-                        </div>
-                    </nav>
+                    <div className="relative z-10 w-full">
+                        <div className="container mx-auto flex justify-between items-center py-4 px-6">
+                            {/* Left side logo and "Staging" */}
+                            <div className="flex items-center space-x-2">
+                                <span className="text-5xl font-bold text-white">Staging</span>
+                                <span className="w-2 h-2 bg-[#dfa667] rounded-full mt-10"></span>
+                            </div>
 
-                    {/* Main Content */}
-                    <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                        <h1 className="text-white text-8xl font-bold uppercase tracking-wide text-center ">
-                            Quality is not only <br /> our standard.
-                        </h1>
+                            {/* Centered navigation links */}
+                            <div className="flex space-x-9 mt-6">
+                                <a href="#" className="hover:text-[#dfa667] text-underline text-xl font-semibold text-white">
+                                    Home
+                                </a>
+                                <a href="#" className="hover:text-[#dfa667] text-xl font-semibold text-white">
+                                    Projects
+                                </a>
+                                <a href="#" className="hover:text-[#dfa667] text-xl font-semibold text-white">
+                                    About
+                                </a>
+                                <a href="#" className="hover:text-[#dfa667] text-xl font-semibold text-white">
+                                    Pages
+                                </a>
+                                <a href="#" className="hover:text-[#dfa667] text-xl font-semibold text-white">
+                                    Blog
+                                </a>
+                                <a href="#" className="hover:text-[#dfa667] text-xl font-semibold text-white">
+                                    Contact
+                                </a>
+                            </div>
 
-                        {/* Styled Button */}
-                        <StyledButton>
-                            <span className="noselect">Button</span>
-                        </StyledButton>
+                            {/* Right side contact information */}
+                            <div className="flex flex-col   text-xl text-white mt-2">
+                                <span>Call us for any questions</span>
+                                <span className="text-[#dfa667] text-2xl font-semibold">
+                                    +01 123 456 789
+                                </span>
+                            </div>
+                        </div>
+
                     </div>
 
-                    {/* Left and Right arrows */}
-                    <div className="absolute left-6 bottom-1/2 transform -translate-y-1/2">
-                        <button className="text-white text-4xl hover:text-gray-300">{"<"}</button>
+                    {/* Main Content Section */}
+                    <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 " >
+                        {/* Heading */}
+                        <h1 className="text-7xl font-bold tracking-widest " style={{ fontFamily: "Aldrich, sans-serif", marginTop:"-300px" }}>QUALITY IS NOT ONLY <br /> OUR STANDARD.</h1>
+
+                        <button class="relative inline-block px-16 py-7 font-bold text-black group  mt-20">
+                            <span class="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                            <span class="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                            <span class="relative z-10 text-white" >See Project</span>
+                        </button>
                     </div>
-                    <div className="absolute right-6 bottom-1/2 transform -translate-y-1/2">
-                        <button className="text-white text-4xl hover:text-gray-300">{">"}</button>
+
+                    {/* Navigation Arrows */}
+                    <div className="absolute inset-y-0 flex justify-between items-center w-full px-4">
+                        {/* Left Arrow */}
+                        <button class="relative inline-block px-12 py-6 font-bold text-white text-2xl group " style={{ marginLeft: "160px" }}>
+                            <span class="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                            <span class="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </button>
+
+                        {/* Right Arrow */}
+                        <button class="relative inline-block px-12 py-6 font-bold text-white text-2xl group  " style={{ marginRight: "170px", marginTop: "10px" }}>
+                            <span class="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                            <span class="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>                            <FontAwesomeIcon icon={faChevronRight} />
+                        </button>
+                    </div>
+                    <div className="relative w-full flex justify-between items-center py-6 px-10 text-white">
+                        {/* Page Indicator */}
+                        <div className="flex items-center space-x-4">
+                            <span className="text-lg font-semibold">01</span>
+                            <div className="w-16 h-px bg-white"></div>
+                            <span className="text-lg font-semibold">02</span>
+                        </div>
+
+                        {/* Discover More Text */}
+                        <div className="text-center text-sm text-gray-300">
+                            <a href="#" className="hover:text-white">Discover more</a>
+                        </div>
+
+                        {/* Social Media Icons */}
+                        <div className="flex space-x-4">
+                            <a href="#" className="hover:text-gray-400">
+                                <FontAwesomeIcon icon={faFacebook} />
+                            </a>
+                            <a href="#" className="hover:text-gray-400">
+                                <FontAwesomeIcon icon={faTwitter} />
+                            </a>
+                            <a href="#" className="hover:text-gray-400">
+                                <FontAwesomeIcon icon={faInstagram} />
+                            </a>
+                            <a href="#" className="hover:text-gray-400">
+                                <FontAwesomeIcon icon={faLinkedin} />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -207,8 +184,10 @@ export default function Home() {
                     <p className="text-lg text-[#707070] mr-36" style={{ fontFamily: "Poppins, sans-serif", lineHeight: "26px" }}>
                         Anisotropic elements that randomly sample. Quisque sit amet nisl ante. Fusce lacinia non tellus id gravida. Cras neque dolor, volutpat et hendrerit et.
                     </p>
-                    <button className="px-6 py-2 bg-black text-white font-bold hover:bg-gray-800 transition-all rounded-md mt-4">
-                        Learn More
+                    <button class="relative inline-block px-12 py-4 font-bold text-black group ">
+                        <span class="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                        <span class="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                        <span class="relative z-10">Learn More</span>
                     </button>
                 </div>
 
@@ -222,57 +201,11 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='ourWorks'>
-                <div>
-                    <p className='text-center text-[#dfa667] text-xl mb-4 mt-20 ' style={{ letterSpacing: "1px", fontWeight: "bold" }}>OUR WORKS</p>
-                    <h1 className='text-center text-semibold text-5xl mb-10' style={{ letterSpacing: "1px" }} >LATEST PROJECTS</h1>
-                </div>
-
-                <div className="flex items-center justify-center">
-                    {/* Left Arrow */}
-                    <button className="text-5xl font-bold p-2 bg-white shadow-md rounded-full ml-4 mr-4">
-                        &#8249;
-                    </button>
-
-                    {/* Image Gallery */}
-                    <div className="flex overflow-x-auto w-full space-x-4 mx-4">
-                        <div className="flex-none w-[24%] h-full">
-                            <img
-                                src="https://preview.colorlib.com/theme/staging/img/project/project-1.jpg"
-                                alt="Image 1"
-                                className="w-full h-[80vh] object-cover shadow-lg"
-                            />
-                        </div>
-                        <div className="flex-none w-[24%] h-full">
-                            <img
-                                src="https://preview.colorlib.com/theme/staging/img/project/project-2.jpg"
-                                alt="Image 2"
-                                className="w-full h-[80vh] object-cover shadow-lg"
-                            />
-                        </div>
-                        <div className="flex-none w-[24%] h-full">
-                            <img
-                                src="https://preview.colorlib.com/theme/staging/img/project/project-3.jpg"
-                                alt="Image 3"
-                                className="w-full h-[80vh] object-cover shadow-lg"
-                            />
-                        </div>
-                        <div className="flex-none w-[24%] h-full">
-                            <img
-                                src="https://preview.colorlib.com/theme/staging/img/project/project-4.jpg"
-                                alt="Image 4"
-                                className="w-full h-[80vh] object-cover shadow-lg"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Right Arrow */}
-                    <button className="text-5xl font-bold p-2 bg-white shadow-md rounded-full mr-4">
-                        &#8250;
-                    </button>
-                </div>
+            <section>
+                <Work />
 
             </section>
+
 
             <section className='ourSpecialization'>
                 <div className="py-16 bg-white text-center ml-48 mr-32 mt-20">
@@ -307,7 +240,7 @@ export default function Home() {
             </section>
 
             <section>
-                <Testimonals/>
+                <Testimonals />
             </section>
 
             <section>
@@ -323,10 +256,10 @@ export default function Home() {
             </section>
 
             <section>
-                 <Footer/>
+                <Footer />
             </section>
 
-            
+
 
         </>
 

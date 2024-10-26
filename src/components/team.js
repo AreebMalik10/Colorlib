@@ -14,17 +14,10 @@ export default function Team() {
                         <div className="flex justify-between items-center">
                             <h2 className="text-5xl font-bold text-gray-900 mt-2">MEET OUR TEAM</h2>
                             <div>
-                                <button className="text-gray-600 hover:text-gray-900 flex items-center space-x-2">
-                                    <span>View All</span>
-                                    <svg
-                                        className="w-5 h-5"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                    </svg>
+                                <button class="relative inline-block px-12 py-4 font-bold text-black group ">
+                                    <span class="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                                    <span class="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                                    <span class="relative z-10">View All</span>
                                 </button>
                             </div>
                         </div>
@@ -55,10 +48,10 @@ export default function Team() {
                                     <h3 className="text-2xl font-semibold text-left text-white mb-2">Dolores Webster</h3>
                                     <p className="text-md font-semibold text-left text-[#dfa667] mb-4">CEO & Founder</p>
                                     {/* Horizontal Line */}
-                                    <hr className='border-t border-[#b7b7b7] my-4 ' style={{ width: "100%", margin:"0 auto", marginTop:"40px"}} />
+                                    <hr className='border-t border-[#b7b7b7] my-4 ' style={{ width: "100%", margin: "0 auto", marginTop: "40px" }} />
 
                                     {/* Description with margin */}
-                                    <p className="text-[#b7b7b7] mb-8 mt-12 mr-6 text-left" style={{fontFamily:"Poppins, sans-serif", lineHeight:"26px"}}>
+                                    <p className="text-[#b7b7b7] mb-8 mt-12 mr-6 text-left" style={{ fontFamily: "Poppins, sans-serif", lineHeight: "26px" }}>
                                         Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra porta leo, non tincidunt mauris condimentum eget. Vivamus non turpis elit. Aenean ultricies nisl sit amet.
                                     </p>
                                 </div>
@@ -101,9 +94,9 @@ export default function Team() {
                                 <div>
                                     <h3 className="text-2xl font-semibold text-left text-white mb-2">Dana Vaughn</h3>
                                     <p className="text-md font-semibold text-left text-[#dfa667] mb-4">Architect</p>
-                                    <hr className='border-t border-[#b7b7b7] my-4 ' style={{ width: "100%", margin:"0 auto", marginTop:"40px"}} />
+                                    <hr className='border-t border-[#b7b7b7] my-4 ' style={{ width: "100%", margin: "0 auto", marginTop: "40px" }} />
                                     {/* Description with margin */}
-                                    <p className="text-[#b7b7b7] mb-8 mt-14 mr-6 text-left" style={{fontFamily:"Poppins, sans-serif", lineHeight:"26px"}}>
+                                    <p className="text-[#b7b7b7] mb-8 mt-14 mr-6 text-left" style={{ fontFamily: "Poppins, sans-serif", lineHeight: "26px" }}>
                                         Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra porta leo, non tincidunt mauris condimentum eget. Vivamus non turpis elit. Aenean ultricies nisl sit amet.
                                     </p>
                                 </div>
@@ -141,9 +134,9 @@ export default function Team() {
                                 <div>
                                     <h3 className="text-2xl font-semibold text-left text-white mb-2">Janathan Mcdaniel</h3>
                                     <p className="text-md font-semibold text-left text-[#dfa667] mb-4">Architect</p>
-                                    <hr className='border-t  border-[#b7b7b7] my-4' style={{ width: "100%", margin:"0 auto", marginTop:"40px"}}/>
+                                    <hr className='border-t  border-[#b7b7b7] my-4' style={{ width: "100%", margin: "0 auto", marginTop: "40px" }} />
                                     {/* Description with margin */}
-                                    <p className="text-[#b7b7b7] mb-8 mt-14 mr-6 text-left" style={{fontFamily:"Poppins, sans-serif", lineHeight:"26px"}}>
+                                    <p className="text-[#b7b7b7] mb-8 mt-14 mr-6 text-left" style={{ fontFamily: "Poppins, sans-serif", lineHeight: "26px" }}>
                                         Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra porta leo, non tincidunt mauris condimentum eget. Vivamus non turpis elit. Aenean ultricies nisl sit amet.
                                     </p>
                                 </div>
@@ -163,7 +156,7 @@ export default function Team() {
                             </div>
 
 
-                            
+
 
                         </div>
                     </div>
