@@ -32,10 +32,10 @@ export default function LatestNews() {
       <div className="flex justify-between items-center mb-8 " style={{ marginLeft: "130px" }}>
         <h2 className="text-4xl font-bold">FROM OUR BLOG</h2>
         <button class="relative inline-block px-12 py-4 font-bold text-black group mr-40">
-  <span class="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
-  <span class="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
-  <span class="relative z-10">View All</span>
-</button>
+          <span class="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+          <span class="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+          <span class="relative z-10">View All</span>
+        </button>
 
 
       </div>

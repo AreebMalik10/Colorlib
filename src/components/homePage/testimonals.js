@@ -54,7 +54,7 @@ const Testimonials = () => {
     const displayIndexes = getDisplayIndexes();
 
     return (
-        <div className="bg-gray-100 py-10 px-4 mt-20">
+        <div className="bg-gray-100 py-10 px-4 mt-32">
             <h4 className='text-center font-semibold text-xl text-[#dfa667]'>Testimonials</h4>
             <h2 className="text-center text-5xl text-gray-800 mb-8 mt-6">WHAT YOUR CLIENTS SAY</h2>
             <div className="max-w-6xl h-[50vh] mx-auto shadow-lg rounded-lg p-8 relative mt-10 ">
