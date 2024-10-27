@@ -1,0 +1,46 @@
+/* Media queries for tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+      flex-direction: row;
+      padding: 1rem 3rem;
+    }
+  
+    /* Left section adjustments */
+    .container .left-section {
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+  
+    .container .left-section a {
+      font-size: 2.25rem; /* 4xl */
+      margin-top: 1rem;
+    }
+  
+    .container .left-section .dot {
+      margin-top: 1.5rem;
+    }
+  
+    /* Display nav links in a row for tablet */
+    .container .nav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+  
+    /* Hide mobile menu button on tablet */
+    .mobile-menu-button {
+      display: none;
+    }
+  
+    /* Display contact info */
+    .contact-info {
+      display: block;
+      text-align: right;
+    }
+  }
+  
+  /* Media queries for desktop (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    /* Additional styling for larger screens if needed */
+  }

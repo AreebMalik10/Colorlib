@@ -10,17 +10,18 @@ export default function Team() {
                 <div className="max-w-7xl mx-auto text-center">
                     {/* Section Title */}
                     <div className="mb-8">
-                        <h4 className="text-xl text-left font-semibold text-orange-600">OUR TEAM</h4>
-                        <div className="flex justify-between items-center">
-                            <h2 className="text-5xl font-bold text-gray-900 mt-2">MEET OUR TEAM</h2>
-                            <div>
-                                <button class="relative inline-block px-12 py-4 font-bold text-black group ">
-                                    <span class="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
-                                    <span class="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
-                                    <span class="relative z-10">View All</span>
+                        <h4 className="text-xl text-left font-semibold text-orange-600 mb-2 sm:mb-4">OUR TEAM</h4>
+                        <div className="flex flex-col sm:flex-row justify-between items-center">
+                            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-2">MEET OUR TEAM</h2>
+                            <div className="mt-4 sm:mt-0">
+                                <button className="relative inline-block px-8 sm:px-12 py-3 sm:py-4 font-bold text-black group">
+                                    <span className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                                    <span className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
+                                    <span className="relative z-10">View All</span>
                                 </button>
                             </div>
                         </div>
+
                     </div>
 
 
