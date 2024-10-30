@@ -11,7 +11,7 @@ export default function Blog() {
 
     return (
         <>
-            <section className="projectHeader">
+            <section className="blogHeader">
                 <div
                     className="bg-cover bg-center h-[60vh] items-center justify-center"
                     style={{ backgroundImage: 'url(https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg)' }}
@@ -120,19 +120,25 @@ export default function Blog() {
             </section>
 
             <section className='MainContent'>
-                <div className="flex flex-col md:flex-row items-start p-8 space-y-8 md:space-y-0 md:space-x-12">
+                <div className="flex flex-col md:flex-row items-start p-8 space-y-8 md:space-y-0 md:space-x-12 ml-10">
                     {/* First Column (Main Content) */}
                     <div className="w-full md:w-[52%] ml-32">
                         <p className="text-[#b7b7b7] mb-2 ml-6 " style={{ fontSize: "15px", fontWeight: "500", letterSpacing: "2px", textTransform: "uppercase" }}>December 20, 2019 • <span className='ml-16 mr-16'> By John Doe</span> • Planning</p>
                         <h1 className="text-4xl font-bold ml-6" style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600", lineHeight: "48px" }}>Target and Amazon Shopping List for <br /> Home Stagers</h1>
-                        <div className="bg-white shadow-lg rounded-lg p-6">
+                        <div className="bg-transparent  shadow-lg rounded-lg p-6 shadow shadow-t-0 shadow-left-0 shadow-r-0 outline-none" >
                             <img
                                 src="https://preview.colorlib.com/theme/staging/img/project/project-3.jpg"
                                 alt="Get Shit Done"
                                 className="w-[100%] h-[65vh]  mb-6 "
                             />
                             <p className=" text-[#707070]  mt-10 ml-14" style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400", lineHeight: "26px", fontSize: "17px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                            <Link to="/" className='ml-20 text-2xl' >--- Read more</Link>
+
+                            <div className="flex items-center ml-14">
+                                <hr className="w-12 h-px bg-gray-300 border-0" />
+                                <button className="bg-transparent text-black font-bold py-2 px-4 rounded ml-2">
+                                    Read More
+                                </button>
+                            </div>
                         </div>
 
                         <div className=' bg-[#dfa667] mt-10 mb-10 h-[30vh] flex items-center justify-center text-center  '>
@@ -156,7 +162,12 @@ export default function Blog() {
                                     className="w-[100%] h-[65vh]  mb-6 "
                                 />
                                 <p className=" text-[#707070]  mt-10 ml-14" style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400", lineHeight: "26px", fontSize: "17px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                                <Link to="/" className='ml-20 text-2xl' >--- Read more</Link>
+                                <div className="flex items-center ml-14">
+                                    <hr className="w-12 h-px bg-gray-300 border-0" />
+                                    <button className="bg-transparent text-black font-bold py-2 px-4 rounded ml-2">
+                                        Read More
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -172,7 +183,12 @@ export default function Blog() {
                                     className="w-[100%] h-[65vh]  mb-6 "
                                 />
                                 <p className=" text-[#707070]  mt-10 ml-14" style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400", lineHeight: "26px", fontSize: "17px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                                <Link to="/" className='ml-20 text-2xl' >--- Read more</Link>
+                                <div className="flex items-center ml-14">
+                                    <hr className="w-12 h-px bg-gray-300 border-0" />
+                                    <button className="bg-transparent text-black font-bold py-2 px-4 rounded ml-2">
+                                        Read More
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -180,7 +196,7 @@ export default function Blog() {
                     </div>
 
                     {/* Second Column (Sidebar) */}
-                    <div className="w-full md:w-[25%] flex flex-col   space-y-4 !ml-32" >
+                    <div className="w-full md:w-[25%] flex flex-col   space-y-4 !ml-20" >
                         <div className="text-center md:text-left">
                             <img
                                 src="https://preview.colorlib.com/theme/staging/img/testimonial/ta-2.png"
@@ -284,7 +300,7 @@ export default function Blog() {
                         </div>
                         <section className='tag'>
                             <h2 className="text-lg text-[#111111] font-semibold  mt-10" style={{ fontFamily: "Aldrich, sans-serif", fontSize: "22px", textTransform: "uppercase", marginBottom: "10px", fontWeight: "400" }}>Tag</h2>
-                            <p className='text-[#b7b7b7] ' style={{ fontSize: "15px", letterSpacing: "1px", fontWeight: "600" }}><Link span className='hover:text-black'>BRANDING</Link> . <Link span className='hover:text-black'>OFFICE</Link> . <Link span className='hover:text-black'>CREATIVE</Link> . <Link span className='hover:text-black'>BUILDING</Link> . <Link span className='hover:text-black'>PORFFOLIO</Link> . <Link span className='hover:text-black'>PRODUCTS</Link> . <Link span className='hover:text-black'>WEBSITE</Link> . <Link span className='hover:text-black'>DESIGN</Link> . <Link span className='hover:text-black'>WORKING SPACE</Link></p>
+                            <p className='text-[#b7b7b7] ' style={{ fontSize: "15px", letterSpacing: "1px", fontWeight: "600" }}><Link span className='hover:text-black'>BRANDING</Link> <span className='-mt-10'>.</span>  <Link span className='hover:text-black'>OFFICE</Link> <span>.</span> <Link span className='hover:text-black'>CREATIVE</Link> <span>. </span><Link span className='hover:text-black'>BUILDING</Link> <span>.</span>  <Link span className='hover:text-black'>PORFFOLIO</Link> . <Link span className='hover:text-black'>PRODUCTS</Link> . <Link span className='hover:text-black'>WEBSITE</Link> . <Link span className='hover:text-black'>DESIGN</Link> . <Link span className='hover:text-black'>WORKING SPACE</Link></p>
                         </section>
 
                         <section className='socialmedialinks'>
@@ -303,7 +319,7 @@ export default function Blog() {
                                     type="text"
                                     placeholder="Your email address"
                                     className="px-4 py-3 w-full border-0 focus:outline-none"
-                                    
+
                                 />
                                 <FontAwesomeIcon icon={faPaperPlane} className="text-2xl text-gray-400 mr-4" />
                             </div>

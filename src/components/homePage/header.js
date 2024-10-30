@@ -5,12 +5,12 @@ import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/fre
 import { Link } from 'react-router-dom';
 
 
+
 export default function Header() {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const toggleDropdown = (event) => {
-        event.preventDefault(); // Prevents navigation away if using Link
 
         setIsDropdownOpen(!isDropdownOpen);
     };
@@ -27,10 +27,14 @@ export default function Header() {
                 <div className="relative z-10 w-full">
                     <div className="container mx-auto flex justify-between items-center py-4 px-6">
                         {/* Left side logo and "Staging" */}
+                        <Link to="/">
                         <div className="flex items-center space-x-2">
+                            
                             <span className="text-5xl font-bold text-white mt-6 ml-20" style={{ fontFamily: "Aldrich, sans-serif" }}>Staging</span>
                             <span className="w-2 h-2 bg-[#dfa667] rounded-full mt-10"></span>
+                          
                         </div>
+                        </Link>
 
                         {/* Centered navigation links */}
                         <div className="flex space-x-9 mt-6 -ml-10">
@@ -44,46 +48,39 @@ export default function Header() {
                                 About
                             </Link>
                             <div className="relative inline-block text-left">
-            {/* Pages Link */}
-            <Link
-                to="#"
-                className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white"
-                onClick={toggleDropdown}
-            >
-                Pages
-            </Link>
+                                {/* Pages Link */}
+                                <Link
+                                    to="#"
+                                    className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white"
+                                    onClick={toggleDropdown}
+                                >
+                                    Pages
+                                </Link>
 
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
-                <div className="absolute left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg w-48 z-50">
-                    <Link to="/project-details">
-                        <button className="w-full text-left px-4 py-2 hover:bg-gray-100 rounded">
-                            Project Details
-                        </button>
-                    </Link>
-                    <Link to="/more-details">
-                        <button className="w-full text-left px-4 py-2 hover:bg-gray-100 rounded">
-                            More Details
-                        </button>
-                    </Link>
-                    <Link to="/services">
-                        <button className="w-full text-left px-4 py-2 hover:bg-gray-100 rounded">
-                            Services
-                        </button>
-                    </Link>
-                    <Link to="/blog-details">
-                        <button className="w-full text-left px-4 py-2 hover:bg-gray-100 rounded">
-                            Blog Details
-                        </button>
-                    </Link>
-                </div>
-            )}
-        </div>
+                                {/* Dropdown Menu */}
+                                {isDropdownOpen && (
+                                    <div className="absolute left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg w-48 z-50">
+                                        <Link to="/blogdetails" className="block w-full text-left px-4 py-2 hover:bg-gray-100 rounded">
+                                            Project Details
+                                        </Link>
+                                        <Link to="/more-details" className="block w-full text-left px-4 py-2 hover:bg-gray-100 rounded">
+                                            More Details
+                                        </Link>
+                                        <Link to="/services" className="block w-full text-left px-4 py-2 hover:bg-gray-100 rounded">
+                                            Services
+                                        </Link>
+                                        <Link to="/blog-details" className="block w-full text-left px-4 py-2 hover:bg-gray-100 rounded">
+                                            Blog Details
+                                        </Link>
+                                    </div>
+                                )}
+
+                            </div>
 
                             <Link to="/blog" className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white" >
                                 Blog
                             </Link>
-                            <Link to="/" className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white">
+                            <Link to="/contact" className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white">
                                 Contact
                             </Link>
                         </div>
