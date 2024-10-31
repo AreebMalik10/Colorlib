@@ -6,120 +6,67 @@ import { faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/fre
 
 
 export default function Blog() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
 
+    const handleToggleDropdown = () =>{
+      setShowDropdown(!showDropdown);
+    }
+  
 
     return (
         <>
-            <section className="blogHeader">
-                <div
-                    className="bg-cover bg-center h-[60vh] items-center justify-center"
-                    style={{ backgroundImage: 'url(https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg)' }}
-                >
-                    <div className="relative z-10 w-full bg-transparent">
-                        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-6">
+           <section className='header'>
+        <div className='bg-transparent h-[50vh]' style={{ background: "url('https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg')" }}>
+          <div className='flex items-center justify-between' style={{marginTop:"70px"}}>
+            <Link to="/" className='text-5xl font-bold text-white mt-6 ml-20'>Staging 
+            <span className="text-yellow-300">.</span>
 
-                            {/* Left side logo and "Staging" */}
-                            <div className="flex items-center space-x-2 mb-4 -ml-48 md:mb-0 sm:ml-0">
-                                <Link
-                                    to="/"
-                                    className="text-3xl md:text-5xl font-bold text-white mt-2 md:mt-6 ml-4 md:ml-16"
-                                    style={{ fontFamily: "Aldrich, sans-serif" }}
-                                >
-                                    Staging
-                                </Link>
-                                <span className="w-2 h-2 bg-[#dfa667] rounded-full mt-4 md:mt-10"></span>
+            </Link>
+            <div className='text-white flex gap-10 mt-10'>
+              <Link to="/" className='hover:text-[#dfa667] border-b-2 border-yellow-500 text-xl font-semibold text-white'>Home</Link>
+              <Link to="/projects" className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>Projects</Link>
+              <Link to="/about" className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>About</Link>
+              <div>
+              <button onClick={handleToggleDropdown} className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>Pages</button>
+              
+              {showDropdown && (
+                <div className=' bg-white w-[9%] h-[15vh]  absolute flex flex-col mt-2'>
+                  <Link to="/projects" className='text-[#111111] ml-4 text-lg font-bold '>Project Details</Link>
+                  <Link to="/about" className='text-[#111111] ml-4 text-lg font-bold'>About</Link>
+                  <Link to="/services" className='text-[#111111] ml-4 text-lg font-bold'>Services</Link>
+                  <Link to="/blogdetails" className='text-[#111111] ml-4 text-lg font-bold'>Blog Details</Link>
 
-
-                                {/*  Menu for Mobile */}
-                                <div className="md:hidden">
-                                    <button
-                                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                        className="text-white text-2xl focus:outline-none ml-auto"
-                                    >
-                                        <FontAwesomeIcon icon={faBars} className='mt-4 ' style={{ marginRight: "-320px" }} />
-
-                                    </button>
-                                </div>
-                            </div>
-
-                            {/* Centered navigation links */}
-                            <div
-                                className={`flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-9 mt-2 md:mt-6 md:-ml-10 ${isMenuOpen ? "block" : "hidden"
-                                    } md:flex`}
-                            >
-                                <a
-                                    href="#"
-                                    className="hover:text-[#dfa667] border-b-2 border-yellow-500 text-base md:text-xl font-semibold text-white"
-                                >
-                                    Home
-                                </a>
-                                <Link
-                                    to="/projects"
-                                    className="hover:border-b-2 hover:border-yellow-500 text-base md:text-xl font-semibold text-white"
-                                >
-                                    Projects
-                                </Link>
-                                <Link
-                                    to="/about"
-                                    className="hover:border-b-2 hover:border-yellow-500 text-base md:text-xl font-semibold text-white"
-                                >
-                                    About
-                                </Link>
-                                <Link
-                                    to="/"
-                                    className="hover:border-b-2 hover:border-yellow-500 text-base md:text-xl font-semibold text-white"
-                                >
-                                    Pages
-                                </Link>
-                                <Link
-                                    to="/"
-                                    className="hover:border-b-2 hover:border-yellow-500 text-base md:text-xl font-semibold text-white"
-                                >
-                                    Blog
-                                </Link>
-                                <Link
-                                    to="/"
-                                    className="hover:border-b-2 hover:border-yellow-500 text-base md:text-xl font-semibold text-white"
-                                >
-                                    Contact
-                                </Link>
-                            </div>
-
-                            {/* Right side contact information */}
-                            <div className="hidden md:flex flex-col text-sm md:text-lg text-white -mb-4 md:-mb-10 mt-4 md:mt-0 text-center md:text-right">
-                                <span>Call us for any questions</span>
-                                <span className="text-[#dfa667] text-lg md:text-2xl font-semibold">
-                                    +01 123 456 789
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* shown only when menu is open */}
-                        {isMenuOpen && (
-                            <div className="flex md:hidden flex-col text-center mt-4 text-white">
-                                <span>Call us for any questions</span>
-                                <span className="text-[#dfa667] text-lg font-semibold">+01 123 456 789</span>
-                            </div>
-                        )}
-                    </div>
-
-                    <div className="text-center mt-20 md:mt-28">
-                        <h3
-                            className="text-white text-3xl md:text-5xl font-semibold"
-                            style={{ fontFamily: "Aldrich, sans-serif" }}
-                        >
-                            OUR BLOGS
-                        </h3>
-                        <p className="text-white mt-4 md:mt-10 font-semibold">
-                            <Link to="">HOME ~</Link>
-                            <span className="text-[#dfa667]"> Blogs</span>
-                        </p>
-                    </div>
                 </div>
-            </section>
+              )}
+              </div>
+              <Link to="/blog" className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>Blog</Link>
+              <Link to="/contact" className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>Contact</Link>
+            </div>
 
-            <section className='MainContent'>
+            <div className='text-white mr-32 mt-12'>
+              <p  className='text-[#b7b7b7]' style={{fontFamily:"Aldrich, sans-serif"}}>Call us for any questions</p>
+              <p className='text-[#dfa667] text-2xl font-semibold'>+01 123 456 789
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-20 md:mt-22">
+            <h3
+              className="text-white text-3xl md:text-5xl font-semibold"
+              style={{ fontFamily: "Aldrich, sans-serif" }}
+            >
+              OUR BLOGS
+            </h3>
+            <p className="text-white mt-4 md:mt-10 font-semibold">
+              <Link to="">HOME ~</Link>
+              <span className="text-[#dfa667]"> Blogs</span>
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+            <section className='MainContent mt-20'>
                 <div className="flex flex-col md:flex-row items-start p-8 space-y-8 md:space-y-0 md:space-x-12 ml-10">
                     {/* First Column (Main Content) */}
                     <div className="w-full md:w-[52%] ml-32">

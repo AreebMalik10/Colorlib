@@ -9,10 +9,10 @@ export default function Who() {
                     <h2 className="text-5xl font-semibold text-black">
                         WE PROPOSE AND <br /> DISCUSS DESIGN RULES
                     </h2>
-                    <p className="text-lg text-[#707070] mr-36 !mt-14" style={{ fontFamily: "Poppins, sans-serif", lineHeight: '' }}>
+                    <p className="text-lg text-[#707070] mr-20 !mt-14" style={{ fontFamily: "Poppins, sans-serif", lineHeight: '' }}>
                         Metasurfaces are generally designed by placing scatterers in periodic or pseudo-periodic grids. We propose and discuss design rules for functional metasurfaces with randomly placed.
                     </p>
-                    <p className="text-lg text-[#707070] mr-36" style={{ fontFamily: "Poppins, sans-serif", lineHeight: "26px" }}>
+                    <p className="text-lg text-[#707070] mr-20" style={{ fontFamily: "Poppins, sans-serif", lineHeight: "26px" }}>
                         Anisotropic elements that randomly sample. Quisque sit amet nisl ante. Fusce lacinia non tellus id gravida. Cras neque dolor, volutpat et hendrerit et.
                     </p>
                     <button class="relative inline-block px-12 py-4 font-bold text-black group ">
@@ -23,11 +23,11 @@ export default function Who() {
                 </div>
 
                 {/* Image Section */}
-                <div className="lg:w-1/2 mt-8 lg:mt-0 lg:pl-12">
+                <div className="lg:w-1/2 mt-8 pl-0 " style={{marginRight:"110px"}}>
                     <img
                         src="https://preview.colorlib.com/theme/staging/img/about-pic.jpg"
                         alt="Discussion"
-                        className=" w-[90%] shadow-lg"
+                        className=" w-[80%] shadow-lg"
                     />
                 </div>
             </section>

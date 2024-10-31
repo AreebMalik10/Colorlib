@@ -5,7 +5,7 @@ import { faDesktop, faTabletAlt, faMobileAlt, faShoppingCart, faTimes } from "@f
 export default function Navbar() {
     return (
         <div
-    className="flex items-center bg-[#333] h-20 px-4 sm:px-2 md:px-4"
+    className="flex items-center bg-[#333] h-20 px-4 sm:px-2 md:px-4 fixed top-0 w-full z-[1000] "
     style={{ borderBottom: "1px solid #444", borderTop: "1px solid #444" }}
 >
     {/* Logo */}
