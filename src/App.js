@@ -9,8 +9,6 @@ import Blog from "./components/homePage/blog.js";
 import Contact from "./components/contact.js";
 import Services from "./components/services.js";
 import Blogdetails from "./components/blogdetails.js";
-import Nav from "./nav.js";
-import Waste from "./components/waste.js";
 
 function App() {
   return (
@@ -27,8 +25,6 @@ function App() {
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/services" element={<Services />}></Route>
         <Route path="/blogdetails" element={<Blogdetails />}></Route>
-        <Route path="/nav" element={<Nav />}></Route>
-        <Route path="/waste" element={<Waste />}></Route>
 
       </Routes>
       <Footer/>

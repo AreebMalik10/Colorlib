@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Choose from './homePage/choose';
 import Team from './homePage/team';
 
@@ -13,44 +13,117 @@ export default function About() {
     setShowDropdown(!showDropdown);
   }
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
       <section className='header'>
         <div className='bg-transparent h-[50vh]' style={{ background: "url('https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg')" }}>
-          <div className='flex items-center justify-between' style={{ marginTop: "70px" }}>
-            <Link to="/" className='text-5xl font-bold text-white mt-6 ml-20'>Staging
-              <span className="text-yellow-300">.</span>
+        <div className="relative z-10 w-full bg-transparent" style={{ marginTop: '70px' }}>
+          <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-6">
+            {/* Left side logo and "Staging" */}
+            <div className="flex items-center space-x-2 mb-4 md:mb-0 w-full md:w-auto justify-between">
+              <Link
+                to="/"
+                className="text-3xl md:text-5xl font-bold text-white mt-2 md:mt-6"
+                style={{ fontFamily: 'Aldrich, sans-serif' }}
+              >
+                Staging
+              </Link>
 
-            </Link>
-            <div className='text-white flex gap-10 mt-10'>
-              <Link to="/" className='hover:text-[#dfa667] border-b-2 border-yellow-500 text-xl font-semibold text-white'>Home</Link>
-              <Link to="/projects" className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>Projects</Link>
-              <Link to="/about" className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>About</Link>
-              <div>
-                <button onClick={handleToggleDropdown} className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>Pages</button>
+              {/* Mobile Menu Toggle Button */}
+              <div className="md:hidden">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="text-white text-2xl focus:outline-none ml-auto"
+                >
+                  <FontAwesomeIcon icon={faBars} className="mt-4" />
+                </button>
+              </div>
+            </div>
 
+            {/* Centered navigation links for desktop */}
+            <div className="hidden md:flex md:gap-6 lg:flex text-white lg:gap-10 mt-8">
+              <Link to="/" className="hover:text-[#dfa667] border-b-2 border-yellow-500 text-xl font-semibold text-white">
+                Home
+              </Link>
+              <Link to="/projects" className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white">
+                Projects
+              </Link>
+              <Link to="/about" className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white">
+                About
+              </Link>
+
+              {/* Pages Button for Desktop */}
+              <div className="relative">
+                <button onClick={handleToggleDropdown} className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white">
+                  Pages
+                </button>
+                {/* Dropdown for Desktop */}
                 {showDropdown && (
-                  <div className=' bg-white w-[9%] h-[15vh]  absolute flex flex-col mt-2'>
-                    <Link to="/projects" className='text-[#111111] ml-4 text-lg font-bold '>Project Details</Link>
-                    <Link to="/about" className='text-[#111111] ml-4 text-lg font-bold'>About</Link>
-                    <Link to="/services" className='text-[#111111] ml-4 text-lg font-bold'>Services</Link>
-                    <Link to="/blogdetails" className='text-[#111111] ml-4 text-lg font-bold'>Blog Details</Link>
-
+                  <div className="absolute bg-white mt-2 w-[330%] rounded-md shadow-lg p-2">
+                    <Link to="/projects" className="text-[#111111] block px-4 py-2 text-lg font-bold">Project Details</Link>
+                    <Link to="/about" className="text-[#111111] block px-4 py-2 text-lg font-bold">About</Link>
+                    <Link to="/services" className="text-[#111111] block px-4 py-2 text-lg font-bold">Services</Link>
+                    <Link to="/blogdetails" className="text-[#111111] block px-4 py-2 text-lg font-bold">Blog Details</Link>
                   </div>
                 )}
               </div>
-              <Link to="/blog" className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>Blog</Link>
-              <Link to="/contact" className='hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white'>Contact</Link>
+
+              <Link to="/blog" className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white">
+                Blog
+              </Link>
+              <Link to="/contact" className="hover:border-b-2 hover:border-yellow-500 text-xl font-semibold text-white">
+                Contact
+              </Link>
             </div>
 
-            <div className='text-white mr-32 mt-12'>
-              <p className='text-[#b7b7b7]' style={{ fontFamily: "Aldrich, sans-serif" }}>Call us for any questions</p>
-              <p className='text-[#dfa667] text-2xl font-semibold'>+01 123 456 789
-              </p>
+            {/* Right side contact information */}
+            <div className="hidden md:hidden lg:flex flex-col text-sm md:text-lg text-white -mb-4 md:-mb-10 mt-4 md:mt-0 text-center md:text-right">
+              <span>Call us for any questions</span>
+              <span className="text-[#dfa667] text-lg md:text-2xl font-semibold">+01 123 456 789</span>
             </div>
           </div>
 
-          <div className="text-center mt-20 md:mt-22">
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 z-20 ">
+              <div className="fixed left-0 top-0 w-64 bg-white h-full transform transition-transform duration-300 mt-16">
+                <div className="flex flex-col items-start p-6">
+                  {/* Close Button */}
+                  <button className="self-end text-black mb-4" onClick={() => setIsMenuOpen(false)}>
+                    <FontAwesomeIcon icon={faTimes} />
+                  </button>
+
+                  {/* Navigation Links for Mobile */}
+                  <Link to="/" className="my-2 text-black">Home</Link>
+                  <Link to="/projects" className="my-2 text-black">Projects</Link>
+                  <Link to="/about" className="my-2 text-black">About</Link>
+                  <button onClick={handleToggleDropdown} className="my-2 text-black">Pages</button>
+
+                  {/* Dropdown Menu under "Pages" for Mobile */}
+                  {showDropdown && (
+                    <div className="bg-white flex flex-col mt-2 ml-4">
+                      <Link to="/projects" className="my-2 text-black">Project Details</Link>
+                      <Link to="/about" className="my-2 text-black">About</Link>
+                      <Link to="/services" className="my-2 text-black">Services</Link>
+                      <Link to="/blogdetails" className="my-2 text-black">Blog Details</Link>
+                    </div>
+                  )}
+                  <Link to="/blog" className="my-2 text-black">Blog</Link>
+                  <Link to="/contact" className="my-2 text-black">Contact</Link>
+                </div>
+
+                <div className="flex flex-col text-center mt-4 text-black">
+                  <span>Call us for any questions</span>
+                  <span className="text-[#dfa667] text-lg font-semibold">+01 123 456 789</span>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+ 
+          <div className="text-center mt-20 md:mt-40 lg:mt-20">
             <h3
               className="text-white text-3xl md:text-5xl font-semibold"
               style={{ fontFamily: "Aldrich, sans-serif" }}

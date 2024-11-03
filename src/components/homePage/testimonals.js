@@ -58,9 +58,10 @@ const Testimonials = () => {
             <h4 className='text-center font-semibold text-xl text-[#dfa667]'>Testimonials</h4>
             <h2 className="text-center text-5xl text-gray-800 mb-8 mt-6">WHAT YOUR CLIENTS SAY</h2>
             <div className="max-w-6xl h-[50vh] mx-auto shadow-lg rounded-lg p-8 relative mt-10 ">
-                <p className="text-[#212529] text-center text-3xl italic mb-8 mt-10 ml-36 mr-36" style={{ lineHeight: "1.5" }}>
+                <p className="text-[#212529] text-center text-lg sm:text-3xl  italic mb-8  mt-10 mx-4 sm:mx-36" style={{ lineHeight: "1.5" }}>
                     "Fast and accurate at solving mental math problems involving addition, subtraction, multiplication, division and percentages but without high-level skills that might be required in jobs requiring complex calculation and analysis."
                 </p>
+
 
                 {/* Next and Previous Buttons */}
                 <div className="absolute top-1/2 transform -translate-y-1/2 left-4 cursor-pointer">
@@ -79,23 +80,39 @@ const Testimonials = () => {
                 </div>
             </div>
 
-            {/* Display five images around the current image */}
+            {/* Display images conditionally based on screen size */}
             <div className="flex justify-center items-center space-x-4 -mt-10">
-                {displayIndexes.map((index, i) => (
-                    <div key={index} className="text-center">
-                        <img
-                            className={`w-${i === 2 ? '32' : '20'} h-${i === 2 ? '32' : '20'} rounded-full border-4 ${i === 2 ? 'border-gray-400' : 'border-gray-200'}`}
-                            src={testimonials[index].image}
-                            alt={testimonials[index].name}
-                        />
-                        {i === 2 && (
-                            <div className="text-center mt-2">
-                                <h4 className="font-bold text-gray-800">{testimonials[index].name}</h4>
-                                <p className="text-orange-500 text-sm">{testimonials[index].role}</p>
-                            </div>
-                        )}
+                {/* Large frame picture for mobile only */}
+                <div className="block sm:hidden text-center">
+                    <img
+                        className="w-32 h-32 rounded-full border-4 border-gray-400"
+                        src={testimonials[displayIndexes[2]].image}
+                        alt={testimonials[displayIndexes[2]].name}
+                    />
+                    <div className="text-center mt-2">
+                        <h4 className="font-bold text-gray-800 text-lg">{testimonials[displayIndexes[2]].name}</h4>
+                        <p className="text-orange-500 text-xs">{testimonials[displayIndexes[2]].role}</p>
                     </div>
-                ))}
+                </div>
+
+                {/* Images for tablet and laptop views */}
+                <div className="hidden sm:flex justify-center items-center space-x-4">
+                    {displayIndexes.map((index, i) => (
+                        <div key={index} className="text-center">
+                            <img
+                                className={`w-${i === 2 ? '32' : '20'} h-${i === 2 ? '32' : '20'} rounded-full border-4 ${i === 2 ? 'border-gray-400' : 'border-gray-200'}`}
+                                src={testimonials[index].image}
+                                alt={testimonials[index].name}
+                            />
+                            {i === 2 && (
+                                <div className="text-center mt-2">
+                                    <h4 className="font-bold text-gray-800">{testimonials[index].name}</h4>
+                                    <p className="text-orange-500 text-sm">{testimonials[index].role}</p>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

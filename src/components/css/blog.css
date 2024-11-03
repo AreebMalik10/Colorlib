@@ -1,0 +1,11 @@
+/* Only display the tablet menu button between 768px and 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tablet\\:hidden {
+      display: block;
+    }
+  
+    .md\\:flex, .lg\\:block {
+      display: none !important;
+    }
+  }
+  
