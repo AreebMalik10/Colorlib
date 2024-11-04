@@ -19,7 +19,7 @@ export default function About() {
     <>
       <section className='header'>
         <div className='bg-transparent h-[50vh]' style={{ background: "url('https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg')" }}>
-        <div className="relative z-10 w-full bg-transparent" style={{ marginTop: '70px' }}>
+        <div className="relative z-10 w-full bg-transparent" style={{ marginTop: '0px' }}>
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-6">
             {/* Left side logo and "Staging" */}
             <div className="flex items-center space-x-2 mb-4 md:mb-0 w-full md:w-auto justify-between">

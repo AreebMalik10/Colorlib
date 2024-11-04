@@ -1,0 +1,28 @@
+/* Default scaling for each mode */
+.app-container {
+    transition: transform 0.3s ease;
+}
+
+/* Desktop view (normal scale) */
+.app-container.desktop {
+    transform: scale(1);
+}
+
+/* Tablet view (scaled down to simulate 768px width) */
+.app-container.tablet {
+    transform: scale(0.75);
+    transform-origin: top center;
+}
+
+/* Mobile view (scaled down to simulate 375px width) */
+.app-container.mobile {
+    transform: scale(0.5);
+    transform-origin: top center;
+}
+
+/* Adjust the overall layout */
+.app-container .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+}

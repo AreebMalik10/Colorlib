@@ -22,7 +22,7 @@ export default function Contact() {
         className="bg-cover bg-center h-[15vh] items-center justify-center"
         style={{ backgroundImage: 'url(https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg)' }}
       >
-        <div className="relative z-10 w-full bg-transparent" style={{ marginTop: '70px' }}>
+        <div className="relative z-10 w-full bg-transparent" style={{ marginTop: '0px' }}>
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-6">
             {/* Left side logo and "Staging" */}
             <div className="flex items-center space-x-2 mb-4 md:mb-0 w-full md:w-auto justify-between">
