@@ -26,10 +26,10 @@ export default function LatestNews() {
   ]
   return (
     <div className='container mx-auto py-16 px-4'>
-      <p className='text-[#dfa667] font-bold text-center md:text-left md:ml-32'>LATEST NEWS</p>
+      <p className='text-[#dfa667] font-bold  lg:text-left md:ml-32'>LATEST NEWS</p>
 
       <div className="flex justify-between items-center mb-8 md:mb-10 md:ml-32">
-        <h2 className="text-4xl font-bold text-center md:text-left">FROM OUR BLOG</h2>
+        <h2 className="text-4xl font-bold  lg:text-left">FROM OUR BLOG</h2>
         <button className="relative inline-block px-8 py-2 font-bold text-black group md:px-12 md:py-4 md:mr-40 mt-4 md:mt-0">
           <span className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>
           <span className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-300 transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:border-[#c4c4c4]"></span>

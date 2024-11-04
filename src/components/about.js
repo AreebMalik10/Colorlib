@@ -88,7 +88,7 @@ export default function About() {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="fixed inset-0 bg-black bg-opacity-50 z-20 ">
-              <div className="fixed left-0 top-0 w-64 bg-white h-full transform transition-transform duration-300 mt-16">
+              <div className="fixed left-0 top-0 w-64 bg-white h-full transform transition-transform duration-300 ">
                 <div className="flex flex-col items-start p-6">
                   {/* Close Button */}
                   <button className="self-end text-black mb-4" onClick={() => setIsMenuOpen(false)}>

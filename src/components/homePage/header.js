@@ -18,7 +18,7 @@ export default function Waste() {
   return (
     <>
       <section className='header'>
-        <div className='bg-transparent h-[120vh]' style={{ background: "url('https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg')" }}>
+        <div className='bg-transparent h-[130vh]' style={{ background: "url('https://preview.colorlib.com/theme/staging/img/hero/hero-1.jpg')" }}>
           <div className="relative z-10 w-full bg-transparent" style={{ marginTop: '0px' }}>
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-6">
               {/* Left side logo and "Staging" */}
@@ -88,7 +88,7 @@ export default function Waste() {
             {/* Mobile Menu */}
             {isMenuOpen && (
               <div className="fixed inset-0 bg-black bg-opacity-50 z-20 ">
-                <div className="fixed left-0 top-0 w-64 bg-white h-full transform transition-transform duration-300 mt-16">
+                <div className="fixed left-0 top-0 w-64 bg-white h-full transform transition-transform duration-300 ">
                   <div className="flex flex-col items-start p-6">
                     {/* Close Button */}
                     <button className="self-end text-black mb-4" onClick={() => setIsMenuOpen(false)}>

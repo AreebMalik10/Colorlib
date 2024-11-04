@@ -91,7 +91,7 @@ export default function Contact() {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="fixed inset-0 bg-black bg-opacity-50 z-20 ">
-              <div className="fixed left-0 top-0 w-64 bg-white h-full transform transition-transform duration-300 mt-16">
+              <div className="fixed left-0 top-0 w-64 bg-white h-full transform transition-transform duration-300 ">
                 <div className="flex flex-col items-start p-6">
                   {/* Close Button */}
                   <button className="self-end text-black mb-4" onClick={() => setIsMenuOpen(false)}>
@@ -107,10 +107,10 @@ export default function Contact() {
                   {/* Dropdown Menu under "Pages" for Mobile */}
                   {showDropdown && (
                     <div className="bg-white flex flex-col mt-2 ml-4">
-                      <Link to="/projects" className="text-[#111111] text-lg font-bold">Project Details</Link>
-                      <Link to="/about" className="text-[#111111] text-lg font-bold">About</Link>
-                      <Link to="/services" className="text-[#111111] text-lg font-bold">Services</Link>
-                      <Link to="/blogdetails" className="text-[#111111] text-lg font-bold">Blog Details</Link>
+                      <Link to="/projects" className="my-2 text-black">Project Details</Link>
+                      <Link to="/about" className="my-2 text-black">About</Link>
+                      <Link to="/services" className="my-2 text-black">Services</Link>
+                      <Link to="/blogdetails" className="my-2 text-black">Blog Details</Link>
                     </div>
                   )}
                   <Link to="/blog" className="my-2 text-black">Blog</Link>

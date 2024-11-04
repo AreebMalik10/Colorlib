@@ -10,7 +10,7 @@ export default function Team() {
                 <div className="max-w-7xl mx-auto text-center">
                     {/* Section Title */}
                     <div className="mb-8">
-                        <h4 className="text-xl text-left font-semibold text-orange-600 mb-2 sm:mb-4">OUR TEAM</h4>
+                        <h4 className="text-xl lg:text-left md:text-left font-semibold text-orange-600 mb-2 sm:mb-4  lg:ml-0">OUR TEAM</h4>
                         <div className="flex flex-col sm:flex-row justify-between items-center">
                             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-2">MEET OUR TEAM</h2>
                             <div className="mt-4 sm:mt-0">
